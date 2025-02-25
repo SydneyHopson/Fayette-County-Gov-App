@@ -1,101 +1,96 @@
-import Image from "next/image";
+import Hero from "./components/Hero";
+import Gallery from "./components/Gallery"; // ✅ Import the gallery
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-background text-foreground">
+     
+      {/* ✅ Hero Section */}
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* 🔹 Business Hours & Closures */}
+      <section className="py-12 px-4 sm:px-6 lg:py-16 text-center">
+        <h2 className="text-2xl font-bold text-[#0E3869]">Normal Business Hours</h2>
+        <p className="text-lg mt-2">8:00 A.M. - 4:00 P.M. | Monday - Friday</p>
+
+        <h3 className="text-xl font-bold mt-8 text-[#0E3869]">2025 Courthouse Closures</h3>
+        <ul className="mt-4 text-lg">
+          <li>📅 <strong>Memorial Day:</strong> Monday, May 26</li>
+          <li>📅 <strong>West Virginia Day:</strong> Friday, June 20</li>
+          <li>📅 <strong>Independence Day:</strong> Friday, July 4</li>
+          <li>📅 <strong>Labor Day:</strong> Monday, September 1</li>
+          <li>📅 <strong>Columbus Day:</strong> Monday, October 13</li>
+          <li>📅 <strong>Veterans Day:</strong> Tuesday, November 11</li>
+          <li>📅 <strong>Thanksgiving:</strong> Thursday & Friday, November 27-28</li>
+          <li>📅 <strong>Christmas Day:</strong> Thursday, December 25</li>
+        </ul>
+      </section>
+
+      {/* 🔹 Quick Links */}
+      <section className="py-12 px-4 sm:px-6 lg:py-16 bg-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#0E3869] text-center">Quick Access</h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+            {/* 🏛 "I Want To" Section */}
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold">I Want To</h3>
+              <ul className="mt-2 text-lg">
+                <li>💳 <a href="http://fayette.softwaresystems.com/index.html" target="_blank" className="text-blue-600 hover:underline">Pay My Taxes</a></li>
+                <li>📍 <a href="https://fayette911wv.org/index.php/address-verification/" target="_blank" className="text-blue-600 hover:underline">Verify My 911 Address</a></li>
+                <li>🏚 <a href="https://fayettecountywv.portal.iworq.net/FAYETTECOUNTY/new-case/400/4041" target="_blank" className="text-blue-600 hover:underline">Report a Vacant House</a></li>
+                <li>♻️ <a href="https://dep.wv.gov/environmental-advocate/reap/tires/Pages/TireCollectionEvents.aspx" target="_blank" className="text-blue-600 hover:underline">Recycle Tires</a></li>
+                <li>🏕 <a href="/coming-soon" className="text-blue-600 hover:underline">Rent a Shelter at the Park</a></li>
+              </ul>
+            </div>
+
+            {/* 📄 "Obtain" Section */}
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold">Obtain</h3>
+              <ul className="mt-2 text-lg">
+                <li>📝 <a href="#" className="text-blue-600 hover:underline">Birth Certificate</a></li>
+                <li>💍 <a href="#" className="text-blue-600 hover:underline">Marriage License</a></li>
+                <li>🏗 <a href="https://fayettecountywv.portal.iworq.net/portalhome/fayettecountywv" target="_blank" className="text-blue-600 hover:underline">Permits</a></li>
+                <li>📜 <a href="/coming-soon" className="text-blue-600 hover:underline">Past Tax Records</a></li>
+              </ul>
+            </div>
+
+            {/* 🔍 "Check" Section */}
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold">Check</h3>
+              <ul className="mt-2 text-lg">
+                <li>🗳 <a href="https://results.enr.clarityelections.com/WV/Fayette/112684/web.285569/#/summary" target="_blank" className="text-blue-600 hover:underline">Election Results</a></li>
+                <li>🚦 <a href="https://results.enr.clarityelections.com/WV/Fayette/112684/web.285569/#/summary" target="_blank" className="text-blue-600 hover:underline">Road Conditions</a></li>
+                <li>🏫 <a href="https://wveis.k12.wv.us/closings/" target="_blank" className="text-blue-600 hover:underline">School Closings</a></li>
+                <li>📋 <a href="https://apps.sos.wv.gov/Elections/voter/amiregisteredtovote" target="_blank" className="text-blue-600 hover:underline">Voter Registration Status</a></li>
+                <li>📰 <a href="/news" className="text-blue-600 hover:underline">Latest News</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* 🔹 Places to Visit */}
+      <section className="py-12 px-4 sm:px-6 lg:py-16 text-center">
+        <h2 className="text-2xl font-bold text-[#0E3869]">Explore Fayette County</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+          <div className="bg-gray-100 p-6 rounded-lg shadow">
+            <h3 className="text-lg font-semibold">🏞 <a href="https://wvstateparks.com/park/babcock-state-park/" target="_blank" className="text-blue-600 hover:underline">Glade Creek Grist Mill</a></h3>
+          </div>
+          <div className="bg-gray-100 p-6 rounded-lg shadow">
+            <h3 className="text-lg font-semibold">🌉 <a href="https://www.nps.gov/neri/planyourvisit/nrgbridge.htm" target="_blank" className="text-blue-600 hover:underline">New River Gorge Bridge</a></h3>
+          </div>
+          <div className="bg-gray-100 p-6 rounded-lg shadow">
+            <h3 className="text-lg font-semibold">🏕 <a href="https://newrivergorgecvb.com/company/fayette-county-park-2/" target="_blank" className="text-blue-600 hover:underline">Fayette County Park</a></h3>
+          </div>
+          <div className="bg-gray-100 p-6 rounded-lg shadow">
+            <h3 className="text-lg font-semibold">🚣 <a href="https://newrivergorgecvb.com/" target="_blank" className="text-blue-600 hover:underline">New River Gorge</a></h3>
+          </div>
+        </div>
+      </section>
+
+      {/* ✅ 🔥 Gallery Component (NEW) */}
+      <Gallery />
     </div>
   );
 }
