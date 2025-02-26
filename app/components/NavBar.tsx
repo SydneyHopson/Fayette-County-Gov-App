@@ -31,14 +31,19 @@ const Navbar = () => {
           <span className="text-2xl font-bold text-[#FFD700]">Fayette County</span>
         </Link>
 
-        {/* 🔹 Mobile Menu Button */}
+        {/* 🔹 Mobile & Medium Menu Button */}
         <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* 🔹 Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 items-center">
-          <li><Link href="/" className="text-white hover:text-[#FFD700]">Home</Link></li>
+        {/* 🔹 Desktop & Medium Menu */}
+        <ul className="hidden md:flex md:space-x-4 lg:space-x-6 items-center">
+          {/* ✅ Home is still in the list but invisible */}
+          <li>
+            <Link href="/" className="opacity-0 pointer-events-none">
+              Home
+            </Link>
+          </li>
 
           {/* 🔹 Sidebar Trigger (Departments) */}
           <li>
@@ -60,7 +65,7 @@ const Navbar = () => {
             { name: "Recreation", path: "/coming-soon" },
           ].map((item, idx) => (
             <li key={idx}>
-              <Link href={item.path} className="text-white hover:text-[#FFD700] px-4 py-2">
+              <Link href={item.path} className="text-white hover:text-[#FFD700] px-2 md:px-3 lg:px-4 py-2">
                 {item.name}
               </Link>
             </li>
@@ -134,7 +139,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* 🔹 Mobile Menu */}
+      {/* 🔹 Mobile & Medium Menu */}
       {isOpen && (
         <div className="md:hidden bg-[#0A1F44]  p-4 relative h-auto">
           <Image
@@ -146,7 +151,12 @@ const Navbar = () => {
           />
 
           <ul className="relative space-y-3">
-            <li><Link href="/" className="block text-white hover:text-[#FFD700]" onClick={() => setIsOpen(false)}>Home</Link></li>
+            {/* ✅ Home is still in the list but invisible */}
+            <li>
+              <Link href="/" className="opacity-0 pointer-events-none">
+                Home
+              </Link>
+            </li>
 
             {/* 🔹 Sidebar Trigger for Mobile */}
             <li>
