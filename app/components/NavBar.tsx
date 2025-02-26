@@ -38,13 +38,13 @@ const Navbar = () => {
 
         {/* 🔹 Desktop Menu */}
         <ul className="hidden md:flex space-x-6 items-center">
-          <li><Link href="/" className="hover:text-[#FFD700]">Home</Link></li>
+          <li><Link href="/" className="text-white hover:text-[#FFD700]">Home</Link></li>
 
           {/* 🔹 Sidebar Trigger (Departments) */}
           <li>
             <button
               onClick={() => setSidebarOpen(true)}
-              className="hover:text-[#FFD700] px-4 py-2 flex items-center space-x-2"
+              className="text-white hover:text-[#FFD700] px-4 py-2 flex items-center space-x-2"
             >
               <span>Departments</span> <ChevronRight size={16} />
             </button>
@@ -60,16 +60,16 @@ const Navbar = () => {
             { name: "Recreation", path: "/coming-soon" },
           ].map((item, idx) => (
             <li key={idx}>
-              <Link href={item.path} className="hover:text-[#FFD700] px-4 py-2">
+              <Link href={item.path} className="text-white hover:text-[#FFD700] px-4 py-2">
                 {item.name}
               </Link>
             </li>
           ))}
 
-          <li><Link href="/services" className="hover:text-[#FFD700]">Services</Link></li>
-          <li><Link href="/news" className="hover:text-[#FFD700]">Latest News</Link></li>
-          <li><Link href="/resources" className="hover:text-[#FFD700]">Resources</Link></li>
-          <li><Link href="/contact" className="hover:text-[#FFD700]">Contact</Link></li>
+          <li><Link href="/services" className="text-white hover:text-[#FFD700]">Services</Link></li>
+          <li><Link href="/news" className="text-white hover:text-[#FFD700]">News</Link></li>
+          <li><Link href="/resources" className="text-white hover:text-[#FFD700]">Resources</Link></li>
+          <li><Link href="/contact" className="text-white hover:text-[#FFD700]">Contact</Link></li>
         </ul>
       </div>
 
